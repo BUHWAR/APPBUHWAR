@@ -1,55 +1,79 @@
 package com.smartlines.buhwar.ui.adpater.guardias;
 
-import android.content.Context;
+import android.app.Activity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class InactivoAdapter /*extends RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>*/ {
+import androidx.recyclerview.widget.RecyclerView;
 
-//    private Context context;
-//    List<Product> productList;
-//
-//    public ProductsAdapter(Context mCtx, List<Product> productList) {
-//        this.mCtx = mCtx;
-//        this.productList = productList;
-//    }
-//
-//    @Override
-//    public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        View view = LayoutInflater.from(mCtx).inflate(R.layout.product_layout,
-//                parent, false);
-//        ProductViewHolder productViewHolder = new ProductViewHolder(view);
-//        return productViewHolder;
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(ProductViewHolder holder, int position) {
-//        Product product = productList.get(position);
-//
-//        holder.textViewTitle.setText(product.getTitle());
-//        holder.textViewShortDesc.setText(product.getShortdesc());
-//        holder.textviewPrice.setText(String.valueOf(product.getPrice()));
-//        holder.textViewRating.setText(String.valueOf(product.getRating()));
-////        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage(), null));
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return productList.size();
-//    }
-//
-//    class ProductViewHolder extends RecyclerView.ViewHolder {
-//
-//        ImageView imageView;
-//        TextView textViewTitle, textViewShortDesc, textViewRating, textviewPrice;
-//
-//        public ProductViewHolder(View itemView) {
-//            super(itemView);
-//
-//            imageView = itemView.findViewById(R.id.imageView);
-//            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-//            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-//            textViewRating = itemView.findViewById(R.id.textViewRating);
-//            textviewPrice = itemView.findViewById(R.id.textViewPrice);
-//
-//        }
-//    }
+import com.smartlines.buhwar.R;
+import com.smartlines.buhwar.model.GuardiaModel;
+
+import java.util.List;
+
+public class InactivoAdapter extends RecyclerView.Adapter<InactivoAdapter.CustomViewHolder>{
+    private List<GuardiaModel> dataList;
+    private Activity context;
+
+    public InactivoAdapter(List<GuardiaModel> dataList,  Activity context) {
+        this.dataList = dataList;
+        this.context = context;
+    }
+
+    class CustomViewHolder extends RecyclerView.ViewHolder {
+
+//Get a reference to the Views in our layout//
+
+        public final View myView;
+
+        TextView txtName;
+        TextView txtNoControl;
+        ImageView imageView;
+        RelativeLayout relativeLayout;
+        View viewGenders;
+        CustomViewHolder(View itemView) {
+            super(itemView);
+            myView = itemView;
+
+            txtName = myView.findViewById(R.id.txtName);
+            txtNoControl = myView.findViewById(R.id.txtAdress);
+            imageView = myView.findViewById(R.id.imgGuardia);
+            viewGenders = myView.findViewById(R.id.viewGenders);
+        }
+    }
+
+    @Override
+
+//Construct a RecyclerView.ViewHolder//
+
+    public InactivoAdapter.CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.list_guardias, parent, false);
+        return new InactivoAdapter.CustomViewHolder(view);
+    }
+
+    @Override
+
+//Set the data//
+
+    public void onBindViewHolder(InactivoAdapter.CustomViewHolder holder, final int position) {
+        //holder.txtName.setText(dataList.get(position).getName());
+       // holder.txtNoControl.setText(dataList.get(position).getNoControl());
+      //  Glide.with(context).load("https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.iconarchive.com%2Fshow%2Fpolicemen-icons-by-dapino%2FPoliceman-Uniform-icon.html&psig=AOvVaw3EAkIMVFajUwHnv1yVi4ut&ust=1571699865249000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKixo7P8q-UCFQAAAAAdAAAAABAE").into(holder.imageView);
+
+        RelativeLayout relativeLayout = holder.relativeLayout;
+
+
+    }
+
+//Calculate the item count for the RecylerView//
+
+    @Override
+    public int getItemCount() {
+        return dataList.size();
+    }
 }

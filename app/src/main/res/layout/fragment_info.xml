@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/colorBackGround">
+    android:background="#FFFFFF"
+    >
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,35 +12,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorBackGround">
+            android:background="@android:color/white">
 
             <View
                 android:id="@+id/viewInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginTop="0dp"
-                android:background="@color/colorPrimaryText">
-            </View>
+                android:background="@color/colorPrimaryText"></View>
 
             <ImageView
                 android:id="@+id/imgLogo"
                 android:layout_width="312dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="0dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/buho" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_below="@+id/viewInfo"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="10dp"
-                android:background="@color/colorBackGround">
+                android:background="#FFFFFF"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btnInfo"
@@ -54,15 +55,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorPrimaryText"/>
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnMision"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:text="Misión"
                     android:background="@color/colorPrimary"
+                    android:text="Misión"
                     android:textColor="@color/colorSecondaryText" />
 
 
@@ -71,15 +72,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorPrimaryText"/>
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnVsion"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:text="Visión"
                     android:background="@color/colorPrimary"
+                    android:text="Visión"
                     android:textColor="@color/colorSecondaryText" />
 
 
@@ -88,15 +89,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorPrimaryText"/>
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnPersonal"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:text="Nuestra gente"
                     android:background="@color/colorPrimary"
+                    android:text="Nuestra gente"
                     android:textColor="@color/colorSecondaryText" />
 
 
@@ -105,8 +106,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorPrimaryText"/>
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="18sp" />
             </LinearLayout>
 
 

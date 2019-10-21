@@ -60,11 +60,9 @@ public class InfoFragment extends Fragment {
             public void onClick(View v) {
                 if(!flagInfo){
                     txtInfo.setText(INFO);
-                    txtInfo.setBackgroundColor(Color.WHITE);
                     flagInfo = true;
                 }else {
                     txtInfo.setText("");
-                    txtInfo.setBackgroundColor(Color.parseColor("#6A6A72"));
                     flagInfo = false;
                 }
             }
@@ -72,11 +70,9 @@ public class InfoFragment extends Fragment {
             public void onClick(View v) {
                 if(!flagMision){
                     txtMision.setText(MISION);
-                    txtMision.setBackgroundColor(Color.WHITE);
                     flagMision = true;
                 }else {
                     txtMision.setText("");
-                    txtMision.setBackgroundColor(Color.parseColor("#6A6A72"));
                     flagMision = false;
 
 
@@ -86,12 +82,10 @@ public class InfoFragment extends Fragment {
             public void onClick(View v) {
                 if(!flagVision){
                     txtVision.setText(VISION);
-                    txtVision.setBackgroundColor(Color.WHITE);
 
                     flagVision = true;
                 }else {
                     txtVision.setText("");
-                    txtVision.setBackgroundColor(Color.parseColor("#6A6A72"));
                     flagVision = false;
 
 
@@ -101,11 +95,9 @@ public class InfoFragment extends Fragment {
             public void onClick(View v) {
                 if(!flagPersonal){
                     txtPersonal.setText(PERSONA);
-                    txtPersonal.setBackgroundColor(Color.WHITE);
                     flagPersonal = true;
                 }else {
                     txtPersonal.setText("");
-                    txtPersonal.setBackgroundColor(Color.parseColor("#6A6A72"));
                     flagPersonal = false;
 
 

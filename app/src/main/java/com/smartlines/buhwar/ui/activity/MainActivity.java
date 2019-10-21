@@ -19,20 +19,26 @@ import com.google.android.material.navigation.NavigationView;
 import com.smartlines.buhwar.R;
 import com.smartlines.buhwar.ui.fragment.helper.InfoFragment;
 import com.smartlines.buhwar.ui.fragment.guardias.GuadiasFragment;
+import com.smartlines.buhwar.ui.fragment.visitante.VisitaFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         DrawerLayout.DrawerListener {
 
     private DrawerLayout drawerLayout;
     private Button btnPanico;
-    private Fragment fragment;
+    private Fragment guadiasFragment;
+    private Fragment infoFragment;
+    private Fragment visitaFragment;
     private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        guadiasFragment = GuadiasFragment.newInstance();
+        infoFragment = InfoFragment.newInstance();
+        visitaFragment = VisitaFragment.newInstance();
+        fragmentManager = getSupportFragmentManager();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
@@ -66,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
     }
 
     @Override
@@ -82,30 +91,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()) {
             case R.id.nav_info:
                 setTitle("ASP Solutions");
-                 fragment = InfoFragment.newInstance();
-                 fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment_content, fragment).commit();
+                fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_content,infoFragment)
+                    .addToBackStack(null)
+                    .commit();
+
+
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.nav_guardias:
-                setTitle("Guadias");
-                 fragment = GuadiasFragment.newInstance();
-                 fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment_content, fragment).commit();
+/*            case R.id.nav_guardias:
+                setTitle("Guardias");
+                fragmentManager.beginTransaction().replace(R.id.fragment_content, guadiasFragment).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_rondin:
                 setTitle("Rondin");
                 drawerLayout.closeDrawer(GravityCompat.START);
-                break;
+                break;*/
             case R.id.nav_visitas:
                 setTitle("Visitas");
+                //drawerLayout.closeDrawer(GravityCompat.START);
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_content,visitaFragment)
+                        .addToBackStack(null)
+                        .commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.nav_estdisticaas:
+/*            case R.id.nav_estdisticaas:
                 setTitle("Estadisticas");
                 drawerLayout.closeDrawer(GravityCompat.START);
-                break;
+                break;*/
         }
 
         return true;
