@@ -17,8 +17,10 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.smartlines.buhwar.R;
+import com.smartlines.buhwar.ui.fragment.estadisticas.EstadisticasFragment;
 import com.smartlines.buhwar.ui.fragment.helper.InfoFragment;
-import com.smartlines.buhwar.ui.fragment.guardias.GuadiasFragment;
+import com.smartlines.buhwar.ui.fragment.incidencias.InicidenciasFragment;
+import com.smartlines.buhwar.ui.fragment.sos.SosFragment;
 import com.smartlines.buhwar.ui.fragment.visitante.VisitaFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
@@ -29,15 +31,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment guadiasFragment;
     private Fragment infoFragment;
     private Fragment visitaFragment;
+    private  Fragment sosFragment;
+    private  Fragment incidenciasFragment;
+    private  Fragment estadisticaFragment;
+
     private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        guadiasFragment = GuadiasFragment.newInstance();
         infoFragment = InfoFragment.newInstance();
         visitaFragment = VisitaFragment.newInstance();
+        sosFragment = SosFragment.newInstance();
+        incidenciasFragment = InicidenciasFragment.newInstance();
+        estadisticaFragment = EstadisticasFragment.newInstance();
         fragmentManager = getSupportFragmentManager();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
@@ -99,15 +107,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
-/*            case R.id.nav_guardias:
-                setTitle("Guardias");
-                fragmentManager.beginTransaction().replace(R.id.fragment_content, guadiasFragment).commit();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                break;
+
             case R.id.nav_rondin:
                 setTitle("Rondin");
                 drawerLayout.closeDrawer(GravityCompat.START);
-                break;*/
+                break;
             case R.id.nav_visitas:
                 setTitle("Visitas");
                 //drawerLayout.closeDrawer(GravityCompat.START);
@@ -117,10 +121,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
-/*            case R.id.nav_estdisticaas:
-                setTitle("Estadisticas");
+            case R.id.nav_sos:
+                setTitle("S. O. S.");
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_content,sosFragment)
+                        .addToBackStack(null)
+                        .commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
-                break;*/
+                break;
+            case R.id.nav_estdisticaas:
+                setTitle("Estadisticas");
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_content,estadisticaFragment)
+                        .addToBackStack(null)
+                        .commit();
+                drawerLayout.closeDrawer(GravityCompat.START);                break;
+            case R.id.nav_inicidencias:
+                setTitle("S. O. S.");
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_content,incidenciasFragment)
+                        .addToBackStack(null)
+                        .commit();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
         }
 
         return true;
