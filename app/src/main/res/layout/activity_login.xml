@@ -36,7 +36,7 @@
             android:background="@color/colorPrimaryDark"
             android:text="LOG IN"
 
-            />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnResgistre"

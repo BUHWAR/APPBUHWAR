@@ -7,8 +7,12 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -20,7 +24,7 @@ import java.util.ArrayList;
 
 public class EstadisticasFragment extends Fragment {
 
-    PieChart pieChart;
+    BarChart pieChart;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +35,7 @@ public class EstadisticasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.fragment_estadisticas, container, false);
-        pieChart = (PieChart) inflatedView.findViewById(R.id.grafico_pastel);
+        pieChart = (BarChart) inflatedView.findViewById(R.id.grafico_pastel);
         fillGraphic();
         return inflatedView;
     }
@@ -39,18 +43,20 @@ public class EstadisticasFragment extends Fragment {
     private void fillGraphic() {
         Description description = new Description();
         description.setText("Progreso mensual");
+        description.setTextSize(28
+        );
 
         pieChart.setDescription(description);
 
-        ArrayList<PieEntry> pieEntrys = new ArrayList<PieEntry>();
-        pieEntrys.add(new PieEntry(2,3));
-        pieEntrys.add(new PieEntry(2,8));
-        pieEntrys.add(new PieEntry(2,6));
-        pieEntrys.add(new PieEntry(2,9));
-        PieDataSet pieDataSet =new PieDataSet(pieEntrys,"Meses");
+        ArrayList<BarEntry> pieEntrys = new ArrayList<BarEntry>();
+        pieEntrys.add(new BarEntry(1,2,"Octubre"));
+        pieEntrys.add(new BarEntry(2,3));
+        pieEntrys.add(new BarEntry(3,4));
+        pieEntrys.add(new BarEntry(4,5));
+        BarDataSet pieDataSet =new BarDataSet(pieEntrys,"Meses");
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        PieData pieData =new PieData(pieDataSet);
+        BarData pieData =new BarData(pieDataSet);
 
         pieChart.setData(pieData);
     }

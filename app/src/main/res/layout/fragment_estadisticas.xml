@@ -8,10 +8,10 @@
         android:layout_height="match_parent"
         android:layout_margin="24dp">
 
-        <com.github.mikephil.charting.charts.PieChart
+        <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/grafico_pastel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"></com.github.mikephil.charting.charts.PieChart>
+            android:layout_margin="16dp"></com.github.mikephil.charting.charts.BarChart>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
