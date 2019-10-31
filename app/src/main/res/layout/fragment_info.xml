@@ -61,14 +61,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:background="@color/colorPrimary"
-                            android:text="¿Quien Somos?"
+                            android:text="¿QUIENES SOMOS?"
                             android:textColor="@color/colorSecondaryText" />
 
                         <TextView
                             android:id="@+id/txtInfo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:gravity="center_vertical|left"
                             android:padding="8dp"
                             android:textColor="@color/colorPrimaryText"
                             android:textSize="18sp" />
@@ -98,7 +98,7 @@
                             android:id="@+id/txtMision"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:gravity="center_vertical|left"
                             android:padding="8dp"
                             android:textColor="@color/colorPrimaryText"
                             android:textSize="18sp" />
@@ -128,12 +128,42 @@
                             android:id="@+id/txtVision"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:gravity="center_vertical|left"
                             android:padding="8dp"
                             android:textColor="@color/colorPrimaryText"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnPersonal"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="@color/colorPrimary"
+                        android:text="Nuestra gente"
+                        android:textColor="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:id="@+id/txtPerosnal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|left"
+                        android:padding="8dp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
                 <androidx.cardview.widget.CardView
@@ -147,18 +177,18 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/btnPersonal"
+                            android:id="@+id/btnObjetivo"
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:background="@color/colorPrimary"
-                            android:text="Nuestra gente"
+                            android:text="OBJETIVO GENERAL DE LA EMPRESA"
                             android:textColor="@color/colorSecondaryText" />
 
                         <TextView
-                            android:id="@+id/txtPerosnal"
+                            android:id="@+id/txtObjetivo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:gravity="center_vertical|left"
                             android:padding="8dp"
                             android:textColor="@color/colorPrimaryText"
                             android:textSize="18sp" />

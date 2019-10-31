@@ -18,6 +18,8 @@ import static com.smartlines.buhwar.utils.Constanst.INFO;
 import static com.smartlines.buhwar.utils.Constanst.MISION;
 import static com.smartlines.buhwar.utils.Constanst.PERSONA;
 import static com.smartlines.buhwar.utils.Constanst.VISION;
+import static com.smartlines.buhwar.utils.Constanst.OBJETIVO;
+
 
 public class InfoFragment extends Fragment {
 
@@ -25,14 +27,17 @@ public class InfoFragment extends Fragment {
     private Button btnMision;
     private Button btnVision;
     private Button btnPersonal;
+    private Button btnObjetivo;
     private TextView txtInfo;
     private TextView txtMision;
     private TextView txtVision;
     private TextView txtPersonal;
+    private TextView txtObjetivo;
     private boolean flagInfo = false;
     private boolean flagMision = false;
     private boolean flagVision = false;
     private boolean flagPersonal = false;
+    private boolean flagObjetivo = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,8 @@ public class InfoFragment extends Fragment {
         btnMision = (Button) view.findViewById(R.id.btnMision);
         btnVision = (Button) view.findViewById(R.id.btnVsion);
         btnPersonal = (Button) view.findViewById(R.id.btnPersonal);
+        btnObjetivo = (Button) view.findViewById(R.id.btnObjetivo);
+
 
         txtInfo = (TextView) view.findViewById(R.id.txtInfo);
 
@@ -54,6 +61,7 @@ public class InfoFragment extends Fragment {
         txtMision = (TextView) view.findViewById(R.id.txtMision);
         txtVision = (TextView) view.findViewById(R.id.txtVision);
         txtPersonal = (TextView) view.findViewById(R.id.txtPerosnal);
+        txtObjetivo = (TextView) view.findViewById(R.id.txtObjetivo);
 
 
         btnInfo.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +74,9 @@ public class InfoFragment extends Fragment {
                     flagInfo = false;
                 }
             }
-        }); btnMision.setOnClickListener(new View.OnClickListener() {
+        });
+
+        btnMision.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(!flagMision){
                     txtMision.setText(MISION);
@@ -78,7 +88,9 @@ public class InfoFragment extends Fragment {
 
                 }
             }
-        }); btnVision.setOnClickListener(new View.OnClickListener() {
+        });
+
+        btnVision.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(!flagVision){
                     txtVision.setText(VISION);
@@ -91,7 +103,11 @@ public class InfoFragment extends Fragment {
 
                 }
             }
-        }); btnPersonal.setOnClickListener(new View.OnClickListener() {
+        });
+
+
+
+        btnPersonal.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(!flagPersonal){
                     txtPersonal.setText(PERSONA);
@@ -99,6 +115,20 @@ public class InfoFragment extends Fragment {
                 }else {
                     txtPersonal.setText("");
                     flagPersonal = false;
+
+
+                }
+            }
+        });
+
+        btnObjetivo.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if(!flagObjetivo){
+                    txtObjetivo.setText(OBJETIVO);
+                    flagObjetivo = true;
+                }else {
+                    txtObjetivo.setText("");
+                    flagObjetivo = false;
 
 
                 }

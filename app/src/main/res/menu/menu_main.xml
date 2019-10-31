@@ -11,22 +11,30 @@
             android:id="@+id/nav_info"
             android:icon="@android:drawable/ic_menu_info_details"
             android:title="Acerca de ASP" />
-        <item
-            android:id="@+id/nav_sos"
-            android:icon="@android:drawable/stat_sys_warning"
-            android:title="S.O:S" />
-        <item
-            android:id="@+id/nav_rondin"
-            android:icon="@android:drawable/ic_dialog_map"
-            android:title="Rondin" />
+
         <item
             android:id="@+id/nav_visitas"
             android:icon="@android:drawable/ic_menu_myplaces"
             android:title="Visitas" />
+
+        <item
+            android:id="@+id/nav_rondin"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Rondin" />
+
         <item
             android:id="@+id/nav_estdisticaas"
             android:icon="@android:drawable/ic_menu_sort_by_size"
             android:title="Estadisticas" />
+
+
+        <item
+            android:id="@+id/nav_sos"
+            android:icon="@android:drawable/stat_sys_warning"
+            android:title="S.O:S" />
+
+
+
         <item
             android:id="@+id/nav_inicidencias"
             android:icon="@android:drawable/ic_input_get"
